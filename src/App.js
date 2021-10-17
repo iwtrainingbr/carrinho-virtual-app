@@ -2,22 +2,22 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
-import "bootstrap/dist/css/bootstrap.css";
+import Counter from "./pages/Counter";
+import Navbar from "./components/Navbar";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 export default function App() {
   return (
-    <div>
-      <hr/>
-        <button className="btn btn-outline-danger">Inicio</button>
-        <button className="">Cadastro</button>
-        <button className="">Login</button>
-        <button className="">Dashboard</button>
-      <hr/>
+    <BrowserRouter>
+      <Navbar/>
 
-      <Home/>
-      <Register/>
-      <Login/>
-      <Dashboard/>
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/cadastro" component={Register} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/contador" component={Counter} />
+      </Switch>
+    </BrowserRouter>
   );
 }
