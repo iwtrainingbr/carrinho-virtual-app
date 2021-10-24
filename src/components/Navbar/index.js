@@ -1,30 +1,104 @@
-import {Link} from "react-router-dom";
-import {Button} from "@mui/material";
+import {useState} from "react";
+import {useHistory} from "react-router-dom";
+import {
+  List, ListItem, ListItemText, ListItemIcon, AppBar, Box, Drawer, Toolbar, Divider, IconButton, Typography, MenuItem, Menu
+} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import HomeIcon from "@mui/icons-material/Home";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import "./styles.css";
 
 export default function Navbar() {
+  const history = useHistory();
+  const [userMenu, setUserMenu] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
+
+  const handleUserMenu = () => {
+    setUserMenu(!userMenu);
+  };
+
+  const handleSidebar = () => {
+    setSidebar(!sidebar);
+  };
+
+  const redirect = (url) => {
+    history.push(url);
+    handleSidebar();
+  };
+
+  const Sidebar = () => {
+    return (
+      <Box sx={{width: 250}} >
+        <List>
+          <ListItem button onClick={() => redirect('/')}>
+            <ListItemIcon><HomeIcon/></ListItemIcon>
+            <ListItemText>Inicio</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/cadastro')}>
+            <ListItemIcon><PersonAddIcon/></ListItemIcon>
+            <ListItemText>Cadastro</ListItemText>
+          </ListItem>
+        </List>
+      </Box>
+    );
+  };
+
   return (
-    <div>
-      <hr/>
-        <Button color="primary" variant="contained">Teste</Button>
-        <button className="btn btn-outline-danger">
-          <Link to="/">Inicio</Link>
-        </button>
-        <button className="btn btn-outline-danger">
-          <Link to="/cadastro">Cadastro</Link>
-        </button>
-        <button className="btn btn-outline-danger">
-          <Link to="/login">Login</Link>
-        </button>
-        <button className="btn btn-outline-danger">
-          <Link to="/dashboard">Dashboard</Link>
-        </button>
-        <Button color="secondary" variant="contained">
-          <Link to="/config">Configuração</Link>
-          </Button>
-      <button className="btn btn-outline-danger">
-        <Link to="/relatorio">Relatorio</Link>
-      </button>
-      <hr/>
-    </div>
-  )
+    <Box sx={{ flexGrow: 1 }}>
+      <Drawer open={sidebar} onClose={handleSidebar}>
+        <Sidebar/>
+      </Drawer>
+
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            onClick={handleSidebar}
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Photos
+          </Typography>
+          <div>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+              onClick={handleUserMenu}
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={userMenu}
+              onClose={handleUserMenu}
+            >
+              <MenuItem>Minha Conta</MenuItem>
+              <MenuItem>Configurações</MenuItem>
+              <Divider/>
+              <MenuItem className="menu-logout">Sair</MenuItem>
+            </Menu>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
 }
