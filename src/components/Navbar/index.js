@@ -7,6 +7,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import HomeIcon from "@mui/icons-material/Home";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import SettingIcon from "@mui/icons-material/Settings";
+import AnalyticsIcon from "@mui/icons-material/Analytics";
+import LogoutIcon from "@mui/icons-material/Logout";
 import "./styles.css";
 
 export default function Navbar() {
@@ -40,6 +44,29 @@ export default function Navbar() {
             <ListItemIcon><PersonAddIcon/></ListItemIcon>
             <ListItemText>Cadastro</ListItemText>
           </ListItem>
+
+          <ListItem button onClick={() => redirect('/dashboard')}>
+            <ListItemIcon><DashboardIcon/></ListItemIcon>
+            <ListItemText>Dashboard</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/config')}>
+            <ListItemIcon><SettingIcon/></ListItemIcon>
+            <ListItemText>Configurações</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/relatorio')}>
+            <ListItemIcon><AnalyticsIcon/></ListItemIcon>
+            <ListItemText>Relatórios</ListItemText>
+          </ListItem>
+
+          <Divider/>
+
+          <ListItem className="menu-logout" button onClick={() => redirect('/login')}>
+            <ListItemIcon><LogoutIcon/></ListItemIcon>
+            <ListItemText>Sair</ListItemText>
+          </ListItem>
+
         </List>
       </Box>
     );
