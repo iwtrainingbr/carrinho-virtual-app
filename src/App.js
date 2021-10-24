@@ -3,6 +3,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Counter from "./pages/Counter";
+import Report from "./pages/Report";
 import Navbar from "./components/Navbar";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
@@ -17,6 +18,7 @@ export default function App() {
         <Route exact path="/cadastro" component={Register} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/contador" component={Counter} />
+          <Route exact path="/relatorio" component={Report} />
       </Switch>
     </BrowserRouter>
   );
