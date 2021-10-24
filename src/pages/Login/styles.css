@@ -1,0 +1,8 @@
+.page-login {
+  width: 94%;
+  margin: auto;
+}
+
+.MuiFormControl-root, .hr{
+  margin-bottom: 20px !important;
+}
