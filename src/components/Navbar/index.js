@@ -18,6 +18,9 @@ export default function Navbar() {
         <button className="btn btn-outline-danger">
           <Link to="/dashboard">Dashboard</Link>
         </button>
+        <Button color="secondary" variant="contained">
+          <Link to="/config">Configuração</Link>
+          </Button>
       <hr/>
     </div>
   )
