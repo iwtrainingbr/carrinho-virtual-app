@@ -10,6 +10,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SettingIcon from "@mui/icons-material/Settings";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
+import StorefrontIcon from "@mui/icons-material/Storefront";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./styles.css";
 
@@ -58,6 +59,11 @@ export default function Navbar() {
           <ListItem button onClick={() => redirect('/relatorio')}>
             <ListItemIcon><AnalyticsIcon/></ListItemIcon>
             <ListItemText>Relatórios</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/categorias')}>
+            <ListItemIcon><StorefrontIcon/></ListItemIcon>
+            <ListItemText>Categorias</ListItemText>
           </ListItem>
 
           <Divider/>
