@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Config from "./pages/Config";
 import Category from "./pages/Category";
 import Vehicle from "./pages/Vehicle";
+import Products from "./pages/Products";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route exact path="/relatorio" component={Report} />
         <Route path="/categorias" component={Category}/>
           <Route path="/veiculos" component={Vehicle}/>
+          <Route path="/Produtos" component={Products}/>
       </Switch>
     </BrowserRouter>
   );
