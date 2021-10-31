@@ -12,6 +12,7 @@ import SettingIcon from "@mui/icons-material/Settings";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import LogoutIcon from "@mui/icons-material/Logout";
+import DriveEtaIcon from '@mui/icons-material/DriveEta';
 import "./styles.css";
 
 export default function Navbar() {
@@ -64,6 +65,11 @@ export default function Navbar() {
           <ListItem button onClick={() => redirect('/categorias')}>
             <ListItemIcon><StorefrontIcon/></ListItemIcon>
             <ListItemText>Categorias</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/veiculos')}>
+            <ListItemIcon><DriveEtaIcon/></ListItemIcon>
+            <ListItemText>Veiculos</ListItemText>
           </ListItem>
 
           <Divider/>
