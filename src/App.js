@@ -1,37 +1,24 @@
-import Home from "./pages/Home";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Counter from "./pages/Counter";
-import Report from "./pages/Report";
+import {BrowserRouter} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Config from "./pages/Config";
-import Category from "./pages/Category";
-import Vehicle from "./pages/Vehicle";
-import Products from "./pages/Products";
-import NotFound from "./pages/NotFound";
+import Routes from "./config/Routes";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
 
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+const myPalette = createTheme({
+  palette: {
+    primary: {
+      main: '#66ccff'
+    },
+  }
+});
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Navbar/>
+    <ThemeProvider theme={myPalette}>
+      <BrowserRouter>
+        <Navbar/>
 
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/cadastro" component={Register} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/contador" component={Counter} />
-        <Route exact path="/config" component={Config}/>
-        <Route exact path="/relatorio" component={Report} />
-        <Route path="/categorias" component={Category}/>
-          <Route path="/veiculos" component={Vehicle}/>
-          <Route path="/Produtos" component={Products}/>
-          <Route path="/*" component={NotFound}/>
-
-      </Switch>
-    </BrowserRouter>
+        <Routes/>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }

@@ -3,7 +3,7 @@ import {Divider, LinearProgress, Card, CardActionArea, CardMedia, CardContent, T
 import {API_URL} from "../../config/Api";
 import "./styles.css";
 
-export default function Category() {
+export default function Category(props) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -18,26 +18,26 @@ export default function Category() {
 
         setTimeout(() => {
           setCategories(data);
-        }, 2000);
+        }, 1000);
       });
   }, [])
 
-  const CardCategory = (props) => {
+  const CardCategory = (data) => {
     return (
       <Card sx={{ marginTop: '20px' }}>
-        <CardActionArea>
+        <CardActionArea onClick={() => props.history.push('/produtos/'+data.name)}>
           <CardMedia
             component="img"
             height="140"
-            image={props.photo}
-            alt={props.name}
+            image={data.photo}
+            alt={data.name}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {props.name}
+              {data.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {props.description}
+              {data.description}
             </Typography>
           </CardContent>
         </CardActionArea>
