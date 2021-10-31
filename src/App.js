@@ -9,6 +9,8 @@ import Config from "./pages/Config";
 import Category from "./pages/Category";
 import Vehicle from "./pages/Vehicle";
 import Products from "./pages/Products";
+import NotFound from "./pages/NotFound";
+
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 export default function App() {
@@ -27,6 +29,8 @@ export default function App() {
         <Route path="/categorias" component={Category}/>
           <Route path="/veiculos" component={Vehicle}/>
           <Route path="/Produtos" component={Products}/>
+          <Route path="/*" component={NotFound}/>
+
       </Switch>
     </BrowserRouter>
   );
