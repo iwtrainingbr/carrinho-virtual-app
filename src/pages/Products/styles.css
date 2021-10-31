@@ -1,0 +1,9 @@
+.page-products {
+  padding: 15px;
+}
+
+.page-products .title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -67,9 +67,15 @@ export default function Navbar() {
             <ListItemText>Categorias</ListItemText>
           </ListItem>
 
+
           <ListItem button onClick={() => redirect('/veiculos')}>
             <ListItemIcon><DriveEtaIcon/></ListItemIcon>
             <ListItemText>Veiculos</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/produtos')}>
+            <ListItemIcon><StorefrontIcon/></ListItemIcon>
+            <ListItemText>Produtos</ListItemText>
           </ListItem>
 
           <Divider/>
