@@ -24,7 +24,7 @@ export default function Vehicle() {
 
     const CardVehicles = (props) => {
         return (
-            <Card sx={{ maxWidth: 345, marginTop: '20px' }}>
+            <Card sx={{ marginTop: '20px' }}>
                 <CardActionArea>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">

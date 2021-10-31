@@ -24,7 +24,7 @@ export default function Category() {
 
   const CardCategory = (props) => {
     return (
-      <Card sx={{ maxWidth: 345, marginTop: '20px' }}>
+      <Card sx={{ marginTop: '20px' }}>
         <CardActionArea>
           <CardMedia
             component="img"
