@@ -42,7 +42,7 @@ export default function Navbar() {
     return (
       <Box sx={{width: 250}} >
         <div align="center" style={{marginTop: 30, marginBottom: 20}}>
-          <img alt="logo" width="70%" src="img/logo-horizontal.png"/>
+          <img alt="logo" width="70%" src="/img/logo-horizontal.png"/>
         </div>
 
         <Divider/>
