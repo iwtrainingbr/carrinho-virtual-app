@@ -147,7 +147,7 @@ export default function Navbar() {
               open={userMenu}
               onClose={handleUserMenu}
             >
-              <MenuItem>Minha Conta</MenuItem>
+              <MenuItem onClick={() => redirect('/myaccount')} className="menu-myaccount">Minha Conta</MenuItem>
               <MenuItem>Configurações</MenuItem>
               <Divider/>
               <MenuItem onClick={() => {history.push('/login'); handleUserMenu()}} className="menu-logout">Sair</MenuItem>
