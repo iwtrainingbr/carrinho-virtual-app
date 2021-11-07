@@ -12,7 +12,7 @@ import Products from "../../pages/Products";
 import NotFound from "../../pages/NotFound";
 import Myaccount from "../../pages/Myaccount";
 
-export default function Routes() {
+export default function Routes(props) {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
@@ -20,7 +20,7 @@ export default function Routes() {
       <Route exact path="/cadastro" component={Register} />
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/contador" component={Counter} />
-      <Route exact path="/config" component={Config}/>
+      <Route exact path="/config" component={() => <Config {...props} />}/>
       <Route exact path="/relatorio" component={Report} />
       <Route path="/categorias" component={Category}/>
       <Route path="/veiculos" component={Vehicle}/>

@@ -4,24 +4,36 @@ import Routes from "./config/Routes";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {useEffect, useState} from "react";
 
+const palette = {
+  palette: {
+    primary: {
+      main: '#fea300'
+    },
+  }
+};
+
 export default function App() {
   const [darkmode, setDarkmode] = useState(false);
+  const [theme, setTheme] = useState(createTheme(palette));
 
-  const [mypalette, setMypalette] = useState(createTheme());
+  const turnDarkMode = () => {
+    setDarkmode(true);
+    setTheme(createTheme({palette: {
+      mode: 'dark',
+    }}));
+  }
 
-  useEffect( () => {
-    setMypalette(createTheme({
-      palette: {
-        mode:'dark',
-      }
-    }))
-  }, []);
+  const turnLightMode = () => {
+    setDarkmode(false);
+    setTheme(createTheme(palette));
+  }
+
   return (
-    <ThemeProvider theme={mypalette}>
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Navbar/>
 
-        <Routes/>
+        <Routes isDarkmode={darkmode} darkmodeOn={turnDarkMode} darkmodeOff={turnLightMode}/>
       </BrowserRouter>
     </ThemeProvider>
   );
