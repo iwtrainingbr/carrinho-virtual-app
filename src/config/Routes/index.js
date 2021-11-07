@@ -10,6 +10,7 @@ import Category from "../../pages/Category";
 import Vehicle from "../../pages/Vehicle";
 import Products from "../../pages/Products";
 import NotFound from "../../pages/NotFound";
+import Myaccount from "../../pages/Myaccount";
 
 export default function Routes() {
   return (
@@ -24,6 +25,9 @@ export default function Routes() {
       <Route path="/categorias" component={Category}/>
       <Route path="/veiculos" component={Vehicle}/>
       <Route path="/Produtos" component={Products}/>
+      <Route path="/myaccount" component={Myaccount}/>
+
+
       <Route path="/*" component={NotFound}/>
     </Switch>
   )
