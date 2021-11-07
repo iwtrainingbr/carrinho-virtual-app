@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import {
   List, ListItem, ListItemText, ListItemIcon, AppBar, Box, Drawer, Toolbar, Divider, IconButton, Typography, MenuItem, Menu
 } from "@mui/material";
@@ -17,8 +17,13 @@ import "./styles.css";
 
 export default function Navbar() {
   const history = useHistory();
+  const location = useLocation();
   const [userMenu, setUserMenu] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+
+  if (location.pathname === '/login') {
+    return (<div></div>);
+  }
 
   const handleUserMenu = () => {
     setUserMenu(!userMenu);
@@ -139,7 +144,7 @@ export default function Navbar() {
               <MenuItem>Minha Conta</MenuItem>
               <MenuItem>Configurações</MenuItem>
               <Divider/>
-              <MenuItem className="menu-logout">Sair</MenuItem>
+              <MenuItem onClick={() => {history.push('/login'); handleUserMenu()}} className="menu-logout">Sair</MenuItem>
             </Menu>
           </div>
         </Toolbar>
