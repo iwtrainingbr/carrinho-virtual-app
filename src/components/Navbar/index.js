@@ -41,6 +41,12 @@ export default function Navbar() {
   const Sidebar = () => {
     return (
       <Box sx={{width: 250}} >
+        <div align="center" style={{marginTop: 30, marginBottom: 20}}>
+          <img alt="logo" width="70%" src="img/logo-horizontal.png"/>
+        </div>
+
+        <Divider/>
+
         <List>
           <ListItem button onClick={() => redirect('/')}>
             <ListItemIcon><HomeIcon/></ListItemIcon>

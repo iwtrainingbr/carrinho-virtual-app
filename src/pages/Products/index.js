@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {Divider, LinearProgress, Card, CardActionArea, CardMedia, CardContent, Typography, Stack, Chip} from "@mui/material";
+import {Divider, LinearProgress, Card, CardActionArea, CardMedia, CardContent, Typography, Chip} from "@mui/material";
 import {API_URL} from "../../config/Api";
 import "./styles.css";
 
