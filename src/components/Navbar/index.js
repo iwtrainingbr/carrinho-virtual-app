@@ -125,6 +125,7 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="menu"
+            data-cy="menu-sidebar"
             sx={{ mr: 2 }}
           >
             <MenuIcon />

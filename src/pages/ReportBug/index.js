@@ -1,5 +1,9 @@
+import "./styles.css";
+
 export default function ReportBug(props) {
   return (
-    <div>Reportar bug</div>
+    <section class="page-report-bug">
+      <div class="title">- Reportar Bug -</div>
+    </section>
   );
 }

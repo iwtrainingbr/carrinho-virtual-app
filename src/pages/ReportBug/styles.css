@@ -1,0 +1,10 @@
+.page-report-bug {
+  width: 94%;
+  margin-left: 3%;
+}
+
+.page-report-bug .title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
