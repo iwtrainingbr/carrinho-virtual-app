@@ -13,6 +13,7 @@ import AnalyticsIcon from "@mui/icons-material/Analytics";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DriveEtaIcon from '@mui/icons-material/DriveEta';
+import BugIcon from '@mui/icons-material/BugReport';
 import "./styles.css";
 
 export default function Navbar() {
@@ -63,10 +64,7 @@ export default function Navbar() {
             <ListItemText>Dashboard</ListItemText>
           </ListItem>
 
-          <ListItem button onClick={() => redirect('/config')}>
-            <ListItemIcon><SettingIcon/></ListItemIcon>
-            <ListItemText>Configurações</ListItemText>
-          </ListItem>
+
 
           <ListItem button onClick={() => redirect('/relatorio')}>
             <ListItemIcon><AnalyticsIcon/></ListItemIcon>
@@ -87,6 +85,18 @@ export default function Navbar() {
           <ListItem button onClick={() => redirect('/produtos')}>
             <ListItemIcon><StorefrontIcon/></ListItemIcon>
             <ListItemText>Produtos</ListItemText>
+          </ListItem>
+
+          <Divider/>
+
+          <ListItem button onClick={() => redirect('/config')}>
+            <ListItemIcon><SettingIcon/></ListItemIcon>
+            <ListItemText>Configurações</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => redirect('/reportar-bug')}>
+            <ListItemIcon><BugIcon/></ListItemIcon>
+            <ListItemText>Reportar Bug</ListItemText>
           </ListItem>
 
           <Divider/>

@@ -26,6 +26,7 @@ export default function Routes(props) {
       <Route path="/veiculos" component={Vehicle}/>
       <Route path="/Produtos" component={Products}/>
       <Route path="/myaccount" component={Myaccount}/>
+      <Route path="/reportar-bug" component={ReportBug}/>
 
 
       <Route path="/*" component={NotFound}/>
