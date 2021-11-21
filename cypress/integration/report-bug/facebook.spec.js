@@ -13,5 +13,4 @@ describe('Test facebook', () => {
 
     cy.get('[type="submit"]').click();
   });
-
 });

@@ -14,5 +14,4 @@ describe('Test ReportBug', () => {
 
     cy.contains('- Reportar Bug -');
   });
-
 });
