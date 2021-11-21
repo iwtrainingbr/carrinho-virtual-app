@@ -11,6 +11,7 @@ import Vehicle from "../../pages/Vehicle";
 import Products from "../../pages/Products";
 import NotFound from "../../pages/NotFound";
 import Myaccount from "../../pages/Myaccount";
+import ReportBug from "../../pages/ReportBug";
 
 export default function Routes(props) {
   return (
